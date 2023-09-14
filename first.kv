@@ -1,0 +1,33 @@
+Interface:
+    Button:
+        text:"[b]Hello[/b] World!"
+        color: 0.5,0.5,1,1
+        font_size: '32px'
+        size_hint: None, None
+        size: 200,100
+        #size_hint: 0.5,0.5
+        #pos:100,100
+        pos:root.width/2-100,root.height/2-50
+        #This is for images button not pressed
+        background_normal: ''
+
+        #This is for images Button pressed
+        background_down: ''
+
+        background_color: 0.5,0.5,1,1
+        markup: True
+
+        #do something on press
+        on_press: root.printing_msg()
+
+    TextInput:
+        size_hint: 0.5,None
+        height: 100
+        pos_hint: {"center_x":0.5,"center_y":0.2}
+        hint_text: "Enter Your Name....."
+        multiline:False
+       #happens when a user presses enter only on sigle line text
+        on_text_validate:root.printing_msg()
+
+        #when user selects or unselects input
+        on_focus:root.focus()
